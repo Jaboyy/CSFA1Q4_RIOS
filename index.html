@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div class="container">
+        <form id="myForm">
+            <fieldset>
+                <legend>Form</legend>
+
+                <div class="input-group">
+                    <label for="username">Name:</label><br>
+                    <input type="text" id="username" class="form-input"><br>
+                    <p id="username-error" class="error-message"></p>
+                </div>
+
+                <div class="input-group">
+                    <label for="pname">Preferred Name:</label><br>
+                    <input type="text" id="pname" class="form-input"><br>
+                    <p id="pname-error" class="error-message"></p>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" class="form-input"><br>
+                    <p id="password-error" class="error-message"></p>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" class="form-input"><br>
+                    <p id="email-error" class="error-message"></p>
+                </div>
+
+                <div class="input-group">
+                    <label for="address">Address:</label><br>
+                    <input type="text" id="address" class="form-input"><br>
+                    <p id="address-error" class="error-message"></p>
+                </div>
+
+                <div class="input-group">
+                    <label for="interests">Your Interests:</label><br>
+                    <textarea cols="50" rows="3" id="interests" class="form-input"></textarea><br>
+                    <p id="interests-error" class="error-message"></p>
+                </div>
+            
+                <div class="input-group">
+                    <label>Gender:</label><br>
+                    <input type="radio" id="male" name="gender" value="Male">
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female">Female</label><br>
+                    <input type="radio" id="no" name="gender" value="Prefer not to say">
+                    <label for="no">Prefer not to say</label><br><br>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" id="submit-button" disabled="true">Submit</button>
+                    <button type="reset" onclick="resetForm()">Reset</button>
+                </div>
+            </fieldset>
+        </form>
+
+        <div id="display-section">
+            <div class="output" id="username-display">Name:</div>
+            <div class="output" id="pname-display">Preferred Name:</div>
+            <div class="output" id="password-display">Password:</div>
+            <div class="output" id="email-display">Email:</div>
+            <div class="output" id="address-display">Address:</div>
+            <div class="output" id="interests-display">Interests:</div>
+            <div class="output" id="gender-display">Gender:</div>
+        </div>    
+    </div>
+    
+    <script>
+        function validateForm(){
+        }
+
+        function submitFormData(){
+           
+        }
+
+        function resetForm(){
+            document.getElementById("myForm").reset();
+            document.getElementById("submit-button").setAttribute("disabled", "true");
+        }
+
+        document.getElementById("myForm").addEventListener("submit", function(event){
+            event.preventDefault();
+            if(validateForm()){
+                submitFormData();
+            }
+        });
+    </script>
+</body>
+</html>
